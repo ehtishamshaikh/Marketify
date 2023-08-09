@@ -16,7 +16,7 @@ const App = () => {
     colors:{
     bg: "#000",
     }
-
+//djakljf
   };
   return (
     <ThemeProvider theme={theme}>
