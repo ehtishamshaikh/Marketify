@@ -4,8 +4,9 @@ import styled from 'styled-components'
 
 const Home = () => {
   return (
-    <Wrapper>Home</Wrapper>
-  )
+//    <Wrapper></Wrapper>
+    <div>Home</div>
+)
 }
 
 const Wrapper = styled.div`

@@ -8,6 +8,7 @@ import SingleProduct from "./SingleProduct";
 import Cart from "./Cart";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
+import Header from "./components/Header";
 
 
 
@@ -16,12 +17,13 @@ const App = () => {
     colors:{
     bg: "#000",
     }
-//djakljf
+
   };
   return (
     <ThemeProvider theme={theme}>
     <BrowserRouter>
     <GlobalStyle/>
+    <Header/>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About/>} />
@@ -30,6 +32,7 @@ const App = () => {
       <Route path="/single-product/:id" element={<SingleProduct />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="*" element={<h1>Not Found</h1>} />
+
     </Routes>
     </BrowserRouter>
     </ThemeProvider>
