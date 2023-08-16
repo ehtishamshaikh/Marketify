@@ -15,7 +15,7 @@ import Header from "./components/Header";
 const App = () => {
   const theme={
     colors:{
-    bg: "#000",
+    bg: "white",
     }
 
   };

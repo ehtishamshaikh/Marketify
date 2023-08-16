@@ -4,15 +4,14 @@ import styled from 'styled-components'
 
 const Home = () => {
   return (
-//    <Wrapper></Wrapper>
-    <div>Home</div>
+    <Wrapper></Wrapper>
+    
 )
 }
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.bg};
-  width: 20rem;
-  height: 20rem;
+  
   `;
 
 
