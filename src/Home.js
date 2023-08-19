@@ -4,7 +4,9 @@ import styled from 'styled-components'
 
 const Home = () => {
   return (
-    <Wrapper></Wrapper>
+    <Wrapper>
+      Home
+    </Wrapper>
     
 )
 }

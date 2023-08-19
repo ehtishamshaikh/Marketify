@@ -16,7 +16,12 @@ const App = () => {
   const theme={
     colors:{
     bg: "white",
-    }
+    },
+    
+    media: {
+      mobile: "768px",
+      tab: "998px",
+    },
 
   };
   return (
