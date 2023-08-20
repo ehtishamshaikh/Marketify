@@ -1,20 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
+import HeroSection from './components/HeroSection'
 
 
 const Home = () => {
+  const data={
+    name : "Marketify Ecommerce "
+  }
   return (
-    <Wrapper>
-      Home
-    </Wrapper>
+    <HeroSection myData={data}>
+
+    </HeroSection>
     
 )
 }
 
-const Wrapper = styled.div`
-  background-color: ${({ theme }) => theme.colors.bg};
-  
-  `;
 
+ 
 
 export default Home

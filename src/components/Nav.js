@@ -170,19 +170,27 @@ const Nav = () => {
    <div className={menuIcon ? "navbar active" : "navbar"}>
     <ul className="navbar-lists">
       <li > 
-        <NavLink to="/" className="navbar-link ">Home</NavLink>
+        <NavLink to="/" className="navbar-link "
+        onClick={()=>setMenuIcon(false)}
+        >Home</NavLink>
          </li>
          <li > 
-        <NavLink to="/about" className="navbar-link ">About</NavLink>
+        <NavLink to="/about" className="navbar-link "
+        onClick={()=>setMenuIcon(false)}
+        >About</NavLink>
          </li>
          <li > 
-        <NavLink to="/products" className="navbar-link ">Products</NavLink>
+        <NavLink to="/products" className="navbar-link "
+        onClick={()=>setMenuIcon(false)}
+        >Products</NavLink>
          </li>
          <li > 
-        <NavLink to="/contact" className="navbar-link ">Contact</NavLink>
+        <NavLink to="/contact" className="navbar-link "
+        onClick={()=>setMenuIcon(false)}>Contact</NavLink>
          </li>
          <li > 
-        <NavLink to="/cart" className="navbar-link cart-trolley--link">
+        <NavLink to="/cart" className="navbar-link cart-trolley--link"
+        onClick={()=>setMenuIcon(false)}>
           <AiOutlineShoppingCart className="cart-trolley"/>
           <span className='cart-total--item'> 11
           </span>
@@ -190,9 +198,15 @@ const Nav = () => {
          </li>
     </ul>
 
+
     <div className="mobile-navbar-btn">
-      <AiOutlineMenu name="menu-outline" className="mobile-nav-icon"/>
-      <AiOutlineClose name="close-outline" className="mobile-nav-icon close-outline"/>
+      <AiOutlineMenu name="menu-outline" className="mobile-nav-icon"
+      onClick={()=>setMenuIcon(true)}
+
+      />
+      <AiOutlineClose name="close-outline" className="mobile-nav-icon close-outline"
+      onClick={()=>setMenuIcon(false)}
+      />
     </div>
     </div>
     </Nav>
