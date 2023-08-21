@@ -9,6 +9,7 @@ import Cart from "./Cart";
 import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 
@@ -39,6 +40,8 @@ const App = () => {
       <Route path="*" element={<h1>Not Found</h1>} />
 
     </Routes>
+    <Footer/>
+    
     </BrowserRouter>
     </ThemeProvider>
   );

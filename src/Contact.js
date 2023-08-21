@@ -5,6 +5,10 @@ const Contact = () => {
     padding: 9rem 0 5rem 0;
     text-align: center;
 
+    .map{
+      margin-top: 3rem;
+    }
+
     .container {
       margin-top: 6rem;
 
@@ -34,9 +38,57 @@ const Contact = () => {
   `;
 
   return (
-    <h1>
-      Contact
-    </h1>
+    <Wrapper>
+      <h2>Contact Us</h2>
+      <iframe className="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.2033360479986!2d67.26210887523082!3d24.856903945400184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb3316c5276e35b%3A0x823a6a0100195ffd!2sFAST%20National%20University%20Karachi%20Campus!5e0!3m2!1sen!2s!4v1692632431005!5m2!1sen!2s"
+       
+      width="100%" height="550" style={{border:0}}
+       allowFullScreen="" loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade">
+
+        </iframe>
+
+        <div className="container">
+          <div className="contact-form">
+          
+            
+          <form
+            action="https://formspree.io/f/xrgwqpdq"
+            method="POST"
+            className="contact-inputs">
+            <input
+              type="text"
+              placeholder="username"
+              name="username"
+              required
+              autoComplete="off"
+            />
+
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email"
+              autoComplete="off"
+              required
+            />
+
+            <textarea
+              name="Message"
+              cols="30"
+              rows="10"
+              required
+              autoComplete="off"
+              placeholder="Enter you message"></textarea>
+
+            <input type="submit" value="send" />
+          </form>
+
+
+          </div>
+
+        </div>
+    </Wrapper>
   )
 };
 
