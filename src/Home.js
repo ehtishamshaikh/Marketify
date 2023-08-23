@@ -7,11 +7,11 @@ import Footer from './components/Footer'
 
 
 const Home = () => {
-  const data={
-    name : "Marketify Ecommerce "
-  }
+  // const data={
+  //   name : " "
+  // }
   return (<>
-    <HeroSection myData={data}/>
+    <HeroSection myData="Marketify Ecommerce"/>
     <Services>
 
     </Services>

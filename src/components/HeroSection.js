@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components'
 import { Button } from '../styles/Button';
 
-const HeroSection = ({myData}) => {
+const HeroSection = (name) => {
 
-const {name} = myData;
+// const {name} = myData;
   return (
     <Wrapper>
         <div className='container'>
@@ -14,7 +14,7 @@ const {name} = myData;
                     <p className='intro-data'> Welcome to 
 
                     </p>
-                    <h1>{name} </h1>
+                    <h1>{name.myData} </h1>
                     <p>
 
                     </p>

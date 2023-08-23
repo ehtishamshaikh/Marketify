@@ -10,6 +10,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ErrorPage from "./ErrorPage";
 
 
 
@@ -37,7 +38,7 @@ const App = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/single-product/:id" element={<SingleProduct />} />
       <Route path="/cart" element={<Cart />} />
-      <Route path="*" element={<h1>Not Found</h1>} />
+      <Route path="*" element={<ErrorPage/>} />
 
     </Routes>
     <Footer/>

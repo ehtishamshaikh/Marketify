@@ -14,7 +14,7 @@ const Trusted = () => {
             <img src='./images/logo.png' alt='trusted-brands' />
 
             </div>
-           /* same pic size */
+{           /* same pic size */}
            <div className='slide'>
             <img src='./images/logo.png' alt='trusted-brands' />
 
