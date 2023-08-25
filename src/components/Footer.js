@@ -72,7 +72,7 @@ const Footer = () => {
               </p>
               <div>
                 <p>PRIVACY POLICY</p>
-                <p>TERMS & CONDITIONS</p>
+                <p>BUSINESS MODEL</p>
               </div>
             </div>
           </div>
