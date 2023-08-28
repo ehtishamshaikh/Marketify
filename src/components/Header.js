@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <MainHeader>
     <NavLink to="/"> 
-     ${`` /*navlink bcoz this changes without reloading the page*/}
+     {`` /*navlink bcoz this changes without reloading the page*/}
 
         <img className="logo" src="./images/logo.png" alt="logo" />
         </NavLink>        
