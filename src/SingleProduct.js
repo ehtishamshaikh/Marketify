@@ -2,7 +2,12 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useProductContext } from "./context/productcontext";
- 
+import PageNavigation from "./components/PageNavigation";
+import MyImage from "./components/MyImage";
+import { Container } from "./styles/Container";
+import FormmatPrice from "./Helpers/FormatPrice"
+import FormatPrice from "./Helpers/FormatPrice";
+
 const API = "https://api.pujakaitem.com/api/products";
 
  const SingleProduct = () => {
@@ -21,6 +26,7 @@ const API = "https://api.pujakaitem.com/api/products";
     stock,
     stars,
     reviews,
+    image
   } = singleProduct;
 
   useEffect(() => { //use effect used when i need data as soon as page loads
@@ -28,8 +34,37 @@ const API = "https://api.pujakaitem.com/api/products";
 
   }, []);
 
+  if (isSingleLoading)
+  {
+    <div className="page_loading">Loading...</div>
+  }
+
 return (
-    <h1>{name}</h1>
+
+    <Wrapper>
+      <PageNavigation title={name}/>
+      <Container className="container">
+        <div className="grid grid-two-column">
+          <div className="product_images">
+                     
+          <MyImage imgs={image}></MyImage>
+
+        </div>
+          <div className="product-data">
+            <h2>{name}</h2>
+            <p>{stars}</p>
+            <p>{reviews} reviews</p>
+            <div className="product-data-price">
+              MRP:<del>
+                <FormatPrice price={price+250000}></FormatPrice>
+              </del>
+            </div>
+            
+          </div>
+        </div> 
+
+      </Container>
+    </Wrapper>
 
 )
 };
