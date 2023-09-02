@@ -5,14 +5,17 @@ import { useProductContext } from "./context/productcontext";
 import PageNavigation from "./components/PageNavigation";
 import MyImage from "./components/MyImage";
 import { Container } from "./styles/Container";
-import FormmatPrice from "./Helpers/FormatPrice"
+import FormmatPrice from "./Helpers/FormatPrice";
 import FormatPrice from "./Helpers/FormatPrice";
+import { MdSecurity } from "react-icons/md";
+import { TbTruckDelivery, TbReplace } from "react-icons/tb";
+import Star from "./components/Star";
 
 const API = "https://api.pujakaitem.com/api/products";
 
- const SingleProduct = () => {
-
-  const {getSingleProduct, isSingleLoading, singleProduct} = useProductContext(); 
+const SingleProduct = () => {
+  const { getSingleProduct, isSingleLoading, singleProduct } =
+    useProductContext();
 
   const { id } = useParams();
 
@@ -26,53 +29,85 @@ const API = "https://api.pujakaitem.com/api/products";
     stock,
     stars,
     reviews,
-    image
+    image,
   } = singleProduct;
 
-  useEffect(() => { //use effect used when i need data as soon as page loads
+  useEffect(() => {
+    //use effect used when i need data as soon as page loads
     getSingleProduct(`${API}?id=${id}`);
-
   }, []);
 
-  if (isSingleLoading)
-  {
-    <div className="page_loading">Loading...</div>
+  if (isSingleLoading) {
+    <div className="page_loading">Loading...</div>;
   }
 
-return (
-
+  return (
     <Wrapper>
-      <PageNavigation title={name}/>
+      <PageNavigation title={name} />
       <Container className="container">
         <div className="grid grid-two-column">
           <div className="product_images">
-                     
-          <MyImage imgs={image}></MyImage>
-
-        </div>
+            <MyImage imgs={image}></MyImage>
+          </div>
           <div className="product-data">
             <h2>{name}</h2>
-            <p>{stars}</p>
-            <p>{reviews} reviews</p>
-            <div className="product-data-price">
-              MRP:<del>
-                <FormatPrice price={price+250000}></FormatPrice>
+            <Star star={stars} review = {reviews}/>
+            <p className="product-data-price">
+              MRP:
+              <del>
+                <FormatPrice price={price + 250000}></FormatPrice>
               </del>
-            </div>
-            
-          </div>
-        </div> 
+            </p>
+            <p className="product-data-price product-data-real-price">
+              Deal of the Day:
+              <FormatPrice price={price + 250000}></FormatPrice>{" "}
+            </p>
+            <p>{description}</p>
 
+            <div className="product-data-warranty">
+              <div className="product-warranty-data">
+                <TbTruckDelivery className="warranty-icon" />
+                <p>Free Delivery</p>
+              </div>
+
+              <div className="product-warranty-data">
+                <TbReplace className="warranty-icon" />
+                <p>30 Days Replacement</p>
+              </div>
+
+              <div className="product-warranty-data">
+                <TbTruckDelivery className="warranty-icon" />
+                <p>Safely Delivered </p>
+              </div>
+
+              <div className="product-warranty-data">
+                <MdSecurity className="warranty-icon" />
+                <p>2 Year Warranty </p>
+              </div>
+            </div>
+            <div className="product-data-info">
+              <p>Available: <span>{stock >0 ? "In Stock" : "Out of Stock"}</span></p>
+            
+            <p>ID: <span>{id}</span></p>
+            <p>Brand:<span> {company} </span></p>
+            </div>
+            </div>
+          </div>
       </Container>
     </Wrapper>
-
-)
+  );
 };
 
 const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
   }
+
+  .product_images{
+    display: flex;
+    align-items: center;
+  }
+  
   .product-data {
     display: flex;
     flex-direction: column;
