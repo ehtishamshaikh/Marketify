@@ -2,11 +2,24 @@ const filterReducer = (state, action) => {
 
     switch(action.type) {
 
-        case "LOAD_FILTER_PRODUCTS":    
+        case "LOAD_FILTER_PRODUCTS":  
+        
+        const priceData = action.payload.map((item) => {
+            return item.price;
+        })
+        console.log(priceData);
+
+        let maxPrice = Math.max(...priceData);
+
         return{
             ...state,
             filter_products: [...action.payload],
             all_products: [...action.payload],
+            filters: {
+                ...state.filters,
+                maxPrice: maxPrice,
+                price: maxPrice,
+            }   
         }
 
         case "SET_GRID_VIEW":
@@ -70,16 +83,49 @@ const filterReducer = (state, action) => {
                 let {all_products} = state;
                 let tempFilterData = [...all_products];
 
-                const {text} = state.filters;
+                const {text, category, company, price} = state.filters;
                 if(text) {
                     tempFilterData = tempFilterData.filter((product) => {
                         return product.name.toLowerCase().includes(text.toLowerCase())
                     })
                 }
 
+                if (category!=="All")
+                {
+                    tempFilterData = tempFilterData.filter((product) => {
+                        return product.category === category;
+                    })
+                }
+                if (company!=="All")
+                {
+                    tempFilterData = tempFilterData.filter((product) => {
+                        return product.company === company;
+                    })
+                }
+                if (price)
+                {
+                    tempFilterData = tempFilterData.filter((product) => {
+                        return product.price <= price;
+                    })
+                }
+                
+
                 return{
                     ...state,
                     filter_products: tempFilterData,
+                }
+
+            case "CLEAR_FILTERS":
+                return{
+                    ...state,
+                    filters: {
+                        ...state.filters,
+                        text: "",
+                        category: "All",
+                        company: "All",
+                        price: 0,
+                        
+                    }
                 }
 
         default: return state

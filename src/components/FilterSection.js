@@ -1,9 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useFilterContext } from '../context/filter_context';
+import FormatPrice from '../Helpers/FormatPrice';
+import {Button} from '../styles/Button';
 
 const FilterSection = () => {
-  const {filters: {text}, updateFilterValue} = useFilterContext();
+  const {filters: {text, category, maxPrice, price, minPrice}, updateFilterValue,
+  clearfilters, all_products} = useFilterContext();
+
+const getUniqueData = (data, property) => {
+  let newVal = data.map((item) => {
+    return item[property];
+  })
+  
+  return (newVal = [ "All", ...new Set(newVal)])
+  
+
+}
+
+  const categoryData = getUniqueData(all_products, "category");
+  const companyData = getUniqueData(all_products, "company");
+  // const priceData = getUniqueData(all_products, "price");
+
+
+
   return (
     <Wrapper>
       <div className='filter-search'>
@@ -14,6 +34,51 @@ const FilterSection = () => {
           value={text} 
           placeholder='Search'
           onChange={updateFilterValue}/>
+        
+      <div className='filter-category'>
+        <h3>Category</h3>
+        <div>
+          {categoryData.map((item, index) => {
+            return <button 
+            key={index}
+             type='button' name="category"
+            value={item}
+            onClick={updateFilterValue}>{item}</button>
+          })}
+          </div>
+          </div>
+
+          <div className='filter-category'>
+        <h3>Company</h3>
+        <form action="#">
+          <select
+            name="company"
+            id="company"
+            className="filter-company--select"
+            onClick={updateFilterValue}>
+            {companyData.map((item) => {
+              return (
+                <option 
+                // key={index}
+                 value={item} name="company">
+                  {item}
+                </option>
+              );
+            })}
+          </select>
+        </form>
+          </div>
+        
+          <div className='filter-category'>
+        <h3>Price</h3>
+        <p>{<FormatPrice price={price}></FormatPrice>}</p>
+        <input type="range" min={minPrice} max={maxPrice} name="price" value={price}
+        onChange={updateFilterValue}
+        />
+        
+          </div>
+          <Button onClick={clearfilters}>Clear Filters</Button>
+
         </div>
     </Wrapper>
   )
