@@ -83,7 +83,7 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <MdSecurity className="warranty-icon" />
-                <p>2 Year Warranty </p>
+                <p>1 Year Warranty </p>
               </div>
             </div>
             <div className="product-data-info">

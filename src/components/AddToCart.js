@@ -4,8 +4,11 @@ import styled from 'styled-components'
 import CartAmountToggle from './CartAmountToggle'
 import { NavLink } from 'react-router-dom'
 import { Button } from '../styles/Button'
+import { useCartContext } from '../context/cart_context'
+
 
 const AddToCart = ({prodcut}) => {
+  const {addtocart} = useCartContext();
     const {id , colors, stock} = prodcut;
     const [color, setColor] = React.useState(colors[0]);
 
@@ -48,7 +51,9 @@ const AddToCart = ({prodcut}) => {
             />
 
             <NavLink to="/cart">
-                <Button className="btn">Add To Cart</Button>
+                <Button className="btn"
+                onClick={()=> addtocart(id, color, amount, prodcut)}
+                >Add To Cart</Button>
             </NavLink>
     </Wrapper>
   )

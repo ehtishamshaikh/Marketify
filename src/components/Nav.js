@@ -3,10 +3,14 @@ import styled from 'styled-components'
 import { NavLink } from 'react-router-dom';
 import {AiOutlineShoppingCart} from 'react-icons/ai'
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import { useCartContext } from '../context/cart_context';
 
 const Nav = () => {
 
   const [menuIcon, setMenuIcon] = useState();
+
+  const {total_item} =useCartContext();
+
   const Nav = styled.nav`
   .navbar-lists {
     display: flex;
@@ -190,7 +194,7 @@ const Nav = () => {
         <NavLink to="/cart" className="navbar-link cart-trolley--link"
         onClick={()=>setMenuIcon(false)}>
           <AiOutlineShoppingCart className="cart-trolley"/>
-          <span className='cart-total--item'> 11
+          <span className='cart-total--item'> {total_item}
           </span>
         </NavLink>
          </li>
