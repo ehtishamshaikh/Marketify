@@ -16,10 +16,11 @@ const HeroSection = (name) => {
                     </p>
                     <h1>{name.myData} </h1>
                     <p>
-
-                    </p>
+                    Our ecommerce project aims to provide a comprehensive online platform for customers to buy and sell products in a convenient, secure,
+and efficient manner. The platform will be designed to cater to the needs of different types of customers, including retail customers,
+wholesale customers, and auction enthusiasts. </p>
                     <NavLink>
-                        <Button>
+                        <Button onClick="/products">
                             Shop Now
                         </Button>
                     </NavLink>

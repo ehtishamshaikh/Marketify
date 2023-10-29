@@ -12,14 +12,14 @@ import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./components/Star";
 import AddToCart from "./components/AddToCart";
 
-const API = "https://api.pujakaitem.com/api/products";
+const API = "https://api.pujakaitem.com/api/products/";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
 
   const { id } = useParams();
-
+    
   const {
     id: alias,
     name,

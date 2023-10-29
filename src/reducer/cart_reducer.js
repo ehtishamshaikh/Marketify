@@ -14,9 +14,9 @@ const cartReducer = (state, action)=> {
                   if (curElem.id === id + color) {
                     let newAmount = curElem.amount + amount;
           
-                    if (newAmount >= curElem.max) {
-                      newAmount = curElem.max;
-                    }
+                    // if (newAmount >= curElem.max) {
+                    //   newAmount = curElem.max;
+                    // }
                     return {
                       ...curElem,
                       amount: newAmount,
@@ -28,6 +28,7 @@ const cartReducer = (state, action)=> {
                 return {
                   ...state,
                   cart: updatedProduct,
+
                 };
               } else {
                 let cartProduct = {
@@ -43,6 +44,7 @@ const cartReducer = (state, action)=> {
                 return {
                   ...state,
                   cart: [...state.cart, cartProduct],
+                  total_item: state.total_item + 1
                 };
               }
             

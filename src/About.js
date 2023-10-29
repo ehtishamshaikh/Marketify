@@ -4,10 +4,14 @@ import HeroSection from './components/HeroSection'
 const About = () => {
 
   return (
-
+<>
     <HeroSection myData = {"Marketify Project"}>
 
     </HeroSection>
+    <p>
+      
+    </p>
+    </>
     
   )
 }

@@ -24,6 +24,7 @@ const AppProvider = ({ children }) => {
       const res = await axios.get(url); //axios is like fetch but provides better formatted data
       const products = await res.data;
       dispatch({ type: "SET_API_DATA", payload: products });
+      console.log(products);
     } catch (error) {
       dispatch({ type: "API_ERROR" });
     }

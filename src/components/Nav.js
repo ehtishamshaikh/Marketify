@@ -63,7 +63,7 @@ const Nav = () => {
       width: 2.4rem;
       height: 2.4rem;
       position: absolute;
-      background-color: #000;
+      background-color: white;
       color: #000;
       border-radius: 50%;
       display: grid;
@@ -189,6 +189,10 @@ const Nav = () => {
          <li > 
         <NavLink to="/contact" className="navbar-link "
         onClick={()=>setMenuIcon(false)}>Contact</NavLink>
+         </li>
+         <li>
+         <NavLink to="/login" className="navbar-link "
+        onClick={()=>setMenuIcon(false)}>Login</NavLink>
          </li>
          <li > 
         <NavLink to="/cart" className="navbar-link cart-trolley--link"

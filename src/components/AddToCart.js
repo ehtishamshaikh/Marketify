@@ -12,7 +12,6 @@ const AddToCart = ({prodcut}) => {
     const {id , colors, stock} = prodcut;
     const [color, setColor] = React.useState(colors[0]);
 
-
     const [amount, setAmount] = React.useState(1);
 
     const setDecrease = () => {

@@ -1,31 +1,47 @@
-import React from 'react'
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 const Trusted = () => {
   return (
-    <Wrapper className='brand-section'>
-        <div className='contianer'>
-            <h3>Trusted by 1000+ Companies</h3>
-
-        
-        <div className='brand-section-slider'>
-        <div className='slide'>
-            <img src='./images/logo.png' alt='trusted-brands' />
-
-            </div>
-{           /* same pic size */}
-           <div className='slide'>
-            <img src='./images/logo.png' alt='trusted-brands' />
-
-            </div>
+    <Wrapper className="brand-section">
+      <div className="container">
+        <h3>Trusted By 1000+ Companies</h3>
+        <div className="brand-section-slider">
+          {/* my 1st img  */}
+          <div className="slide">
+            <img
+              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"
+              alt="trusted-brands"
+            />
+          </div>
+          <div className="slide">
+            <img
+              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"
+              alt="trusted-brands"
+            />
+          </div>
+          <div className="slide">
+            <img
+              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"
+              alt="trusted-brands"
+            />
+          </div>
+          <div className="slide">
+            <img
+              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"
+              alt="trusted-brands"
+            />
+          </div>
+          <div className="slide">
+            <img
+              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"
+              alt="trusted-brands"
+            />
+          </div>
         </div>
-        </div>  
-
-
+      </div>
     </Wrapper>
-  )
-}
+  );
+};
 
 const Wrapper = styled.section`
   padding: 9rem 0;
@@ -41,17 +57,14 @@ const Wrapper = styled.section`
     font-size: 2rem;
     font-weight: bold;
   }
-  
-  }
+
   img {
     min-width: 10rem;
     height: 10rem;
   }
 
-
   .brand-section-slider {
     margin-top: 3.2rem;
-    margin-left:1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -69,5 +82,4 @@ const Wrapper = styled.section`
   }
 `;
 
-
-export default Trusted
+export default Trusted;

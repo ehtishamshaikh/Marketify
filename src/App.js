@@ -11,6 +11,7 @@ import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ErrorPage from "./ErrorPage";
+import Login from "./Login";
 
 
 
@@ -38,6 +39,8 @@ const App = () => {
       <Route path="/contact" element={<Contact />} />
       <Route path="/singleproduct/:id" element={<SingleProduct />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/login" element={<Login />} />
+
       <Route path="*" element={<ErrorPage/>} />
 
     </Routes>
